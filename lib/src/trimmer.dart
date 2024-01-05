@@ -247,7 +247,7 @@ class Trimmer {
 
     command += '"$outputPath"';
 
-    FFmpegKit.executeAsync('hwaccel videotoolbox $command', (session) async {
+    FFmpegKit.executeAsync('-hwaccel videotoolbox $command', (session) async {
       final state =
           FFmpegKitConfig.sessionStateToString(await session.getState());
       final returnCode = await session.getReturnCode();
